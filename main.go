@@ -133,6 +133,13 @@ func main() {
 		fmt.Println(line)
 	}
 	fmt.Println()
+	log.Fatal("TEST: startup crash")
+	panic("TEST: panic at startup")
+	go func() {
+		time.Sleep(5 * time.Second)
+		panic("TEST: delayed crash")
+	}()
+	
 	fmt.Printf("==> Server listening at %s 🚀\n", bindAddr)
 
 	if err := http.ListenAndServe(bindAddr, nil); err != nil {
