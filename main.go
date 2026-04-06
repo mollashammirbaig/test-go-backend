@@ -135,16 +135,6 @@ func main() {
 		fmt.Println(line)
 	}
 	fmt.Println()
-
-	_, err := net.Dial("tcp", "invalidhost:1234")
-	if err != nil {
-		log.Fatal("TEST: connection failed:", err)
-	}
-	
-	go func() {
-		time.Sleep(5 * time.Second)
-		panic("TEST: delayed crash")
-	}()
 	
 	fmt.Printf("==> Server listening at %s 🚀\n", bindAddr)
 
