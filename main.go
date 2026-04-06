@@ -2,13 +2,10 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/gofrs/uuid"
 )
